@@ -12,6 +12,7 @@ public class D {
         list.add("Item 2");
         ListIterator<String> iterator = list.listIterator();
         iterator.next();
+        int z = 0;
     }
 
     public void dMethod() {

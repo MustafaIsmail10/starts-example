@@ -10,7 +10,7 @@ class B {
     int bField = 0;
 
     public void bViolationMethod() {
-        bField += 1;
+        bField += 2;
         List<Integer> l;
         l = new ArrayList<Integer>(Arrays.asList(4, 5, 2, 3, 1));
         try{
