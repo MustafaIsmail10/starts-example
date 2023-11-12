@@ -6,6 +6,8 @@ import java.util.List;
 
 class C extends B {
 
+    int z = 5;
+
     public void cViolationMethod() {
         List<String> list = new ArrayList<>();
         list.add("Item 1");
@@ -20,6 +22,24 @@ class C extends B {
         } catch (IllegalStateException e) {
             System.out.println("IllegalStateException");
         }
+        z += 22;
+    }
+
+    public void bViolationMethod() {
+        List<String> list = new ArrayList<>();
+        list.add("Item 1");
+        list.add("Item 2");
+        Iterator<String> iterator = list.iterator();
+        if (iterator.hasNext()) {
+            iterator.next();
+            iterator.remove();
+        }
+        try {
+            iterator.remove(); // This will violate the specification
+        } catch (IllegalStateException e) {
+            System.out.println("IllegalStateException");
+        }
+        z = 0;
     }
 
     public void cMethod() {
